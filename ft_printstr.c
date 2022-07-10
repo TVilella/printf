@@ -6,7 +6,7 @@
 /*   By: tcarvalh <tcarvalh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 15:23:49 by tcarvalh          #+#    #+#             */
-/*   Updated: 2022/07/10 17:17:51 by tcarvalh         ###   ########.fr       */
+/*   Updated: 2022/07/10 19:21:28 by tcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	ft_printstr(char *str)
 {
-	size_t	len;
+	int	len;
 
+	len = 0;
 	if (!str)
 		str = "(null)";
 	len = ft_strlen(str);

@@ -6,15 +6,15 @@
 /*   By: tcarvalh <tcarvalh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 15:45:09 by tcarvalh          #+#    #+#             */
-/*   Updated: 2022/07/10 17:17:50 by tcarvalh         ###   ########.fr       */
+/*   Updated: 2022/07/10 19:21:27 by tcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static size_t	ft_lenuint(unsigned int num)
+static int	ft_lenuint(unsigned int num)
 {
-	size_t	len;
+	int	len;
 
 	len = 1;
 	while (num / 10 != 0)
@@ -28,7 +28,7 @@ static size_t	ft_lenuint(unsigned int num)
 static char	*ft_uitoa(unsigned int num)
 {
 	char	*str;
-	size_t	len;
+	int		len;
 
 	len = ft_lenuint(num);
 	str = (char *)malloc(sizeof(char) * (len + 1));
@@ -46,11 +46,18 @@ static char	*ft_uitoa(unsigned int num)
 
 int	ft_printuint(unsigned int num)
 {
-	size_t	len;
+	int		len;
 	char	*str;
 
-	str = ft_uitoa(num);
-	len = ft_printstr(str);
-	free(str);
+	if (num == 0)
+		len = write(1, "0", 1);
+	else
+	{
+		str = ft_uitoa(num);
+		if (!str)
+			return (0);
+		len = ft_printstr(str);
+		free(str);
+	}
 	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: tcarvalh <tcarvalh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 14:55:16 by tcarvalh          #+#    #+#             */
-/*   Updated: 2022/07/10 17:17:52 by tcarvalh         ###   ########.fr       */
+/*   Updated: 2022/07/10 19:21:30 by tcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_printnbr(int n)
 {
-	size_t	len;
+	int		len;
 	char	*num;
 
 	num = ft_itoa(n);

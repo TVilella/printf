@@ -6,12 +6,12 @@
 #    By: tcarvalh <tcarvalh@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 21:14:03 by tcarvalh          #+#    #+#              #
-#    Updated: 2022/07/10 17:46:59 by tcarvalh         ###   ########.fr        #
+#    Updated: 2022/07/10 19:21:24 by tcarvalh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS		=	ft_printf.c ft_printhex.c ft_printnbr.c ft_printpointer.c \
-				ft_printstr.C ft_printuint.c
+				ft_printstr.c ft_printuint.c
 			
 OBJS		= $(SRCS:.c=.o)
 
@@ -31,8 +31,7 @@ $(NAME): $(OBJS)
 		ar rcs $@ $^
 
 %.o: %.c
-		$(CC) -c $(CFLAGS) -I$(LIBFT_PATH) -o $@ $<
-
+		$(CC) $(CFLAGS) -c -I$(LIBFT_PATH) -o $@ $<
 
 $(LIBFT):	
 			@make -C $(LIBFT_PATH)

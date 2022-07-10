@@ -6,15 +6,15 @@
 /*   By: tcarvalh <tcarvalh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 16:05:38 by tcarvalh          #+#    #+#             */
-/*   Updated: 2022/07/10 17:17:53 by tcarvalh         ###   ########.fr       */
+/*   Updated: 2022/07/10 19:21:31 by tcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static size_t	ft_lenhex(unsigned int num)
+static int	ft_lenhex(unsigned long long num)
 {
-	size_t	len;
+	int	len;
 
 	len = 1;
 	while (num / 16 != 0)
@@ -25,10 +25,10 @@ static size_t	ft_lenhex(unsigned int num)
 	return (len);
 }
 
-static char	*ft_hextoa(unsigned int num, int lower)
+static char	*ft_hextoa(unsigned long long num, int lower)
 {
 	char	*str;
-	size_t	len;
+	int		len;
 	int		un;
 
 	len = ft_lenhex(num);
@@ -54,9 +54,9 @@ static char	*ft_hextoa(unsigned int num, int lower)
 	return (str);
 }
 
-int	ft_printhex(unsigned int num, int lower)
+int	ft_printhex(unsigned long long num, int lower)
 {
-	size_t	len;
+	int		len;
 	char	*str;
 
 	if (num == 0)
